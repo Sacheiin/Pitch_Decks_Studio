@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Intake - AI-Powered Pitch Deck Studio</title>
+    <link rel="stylesheet" href="intake-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <div class="progress-indicator">
+            <div class="step active">1</div>
+            <div class="step">2</div>
+            <div class="step">3</div>
+            <div class="step">4</div>
+            <div class="step">5</div>
+        </div>
+
+        <form id="intake-form">
+            <!-- Step 1: About Your Startup -->
+            <div class="form-step active" id="step-1">
+                <h2>Step 1: Let’s Learn About Your Startup</h2>
+                <label for="startup-name">Startup Name</label>
+                <input type="text" id="startup-name" name="startup_name" required>
+
+                <label for="website">Website / Landing Page (if any)</label>
+                <input type="url" id="website" name="website">
+
+                <label for="industry">Industry / Sector</label>
+                <input type="text" id="industry" name="industry" required>
+
+                <label for="funding-stage">Funding Stage</label>
+                <select id="funding-stage" name="funding_stage" required>
+                    <option value="">Select Stage</option>
+                    <option value="pre-seed">Pre-seed</option>
+                    <option value="seed">Seed</option>
+                    <option value="series-a">Series A</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="one-liner">One-liner about your business</label>
+                <textarea id="one-liner" name="one_liner" rows="3" required></textarea>
+
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Step 2: Your Pitch Vision -->
+            <div class="form-step" id="step-2">
+                <h2>Step 2: What’s the Story You Want to Tell?</h2>
+                <label for="pitch-goal">Goal of this pitch</label>
+                <input type="text" id="pitch-goal" name="pitch_goal" placeholder="e.g., raise funds, apply to accelerator, close client" required>
+
+                <label for="target-audience">Target audience</label>
+                <input type="text" id="target-audience" name="target_audience" placeholder="VCs, angels, accelerators, corporates" required>
+
+                <label for="differentiators">Key differentiators</label>
+                <textarea id="differentiators" name="differentiators" rows="3" placeholder="What makes you stand out?" required></textarea>
+
+                <label for="existing-materials">Upload any existing pitch, notes, or rough drafts</label>
+                <input type="file" id="existing-materials" name="existing_materials">
+
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Step 3: Design & Tone Preferences -->
+            <div class="form-step" id="step-3">
+                <h2>Step 3: Make It Look & Sound Right</h2>
+                <label for="tone">Preferred tone</label>
+                <select id="tone" name="tone">
+                    <option value="bold">Bold</option>
+                    <option value="professional">Professional</option>
+                    <option value="playful">Playful</option>
+                    <option value="minimal">Minimal</option>
+                    <option value="investor-centric">Investor-Centric</option>
+                </select>
+
+                <label for="visual-style">Visual style</label>
+                <select id="visual-style" name="visual_style">
+                    <option value="corporate">Corporate</option>
+                    <option value="minimalist">Minimalist</option>
+                    <option value="colorful">Colorful</option>
+                    <option value="story-driven">Story-driven</option>
+                    <option value="sleek">Sleek</option>
+                </select>
+
+                <label for="brand-assets">Optional brand assets upload (Logo, Fonts, Color Guide)</label>
+                <input type="file" id="brand-assets" name="brand_assets">
+
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Step 4: Choose a Package -->
+            <div class="form-step" id="step-4">
+                <h2>Step 4: Pick What Works for You</h2>
+                <div class="package-options">
+                    <label><input type="radio" name="package" value="basic" required> Basic – ₹1999 / $29</label>
+                    <label><input type="radio" name="package" value="pro"> Pro – ₹4999 / $69</label>
+                    <label><input type="radio" name="package" value="premium"> Premium – ₹9999 / $129</label>
+                </div>
+
+                <h3>Add-ons:</h3>
+                <div class="addon-options">
+                    <label><input type="checkbox" name="addon_one_pager" value="999"> One-pager summary: ₹999</label>
+                    <label><input type="checkbox" name="addon_strategy_call" value="1999"> Fundraising strategy call: ₹1999</label>
+                    <label><input type="checkbox" name="addon_express" value="999"> Need it faster? Add express delivery (₹999)</label>
+                </div>
+
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Step 5: Payment & Confirmation -->
+            <div class="form-step" id="step-5">
+                <h2>Step 5: Almost There!</h2>
+                <div id="summary">
+                    <!-- Summary will be populated by JS -->
+                    <p>Package: <span id="summary-package"></span></p>
+                    <p>Add-ons: <span id="summary-addons"></span></p>
+                    <p>Total: <span id="summary-total"></span></p>
+                </div>
+                <!-- Placeholder for Payment Integration -->
+                <div class="payment-placeholder">
+                    [Payment Gateway Integration - Stripe/Razorpay]
+                </div>
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="submit">Pay & Submit</button>
+            </div>
+
+             <!-- Confirmation Message (Hidden initially) -->
+            <div id="confirmation-message" style="display: none; text-align: center; padding: 40px;">
+                <h2>Thanks! Your pitch deck journey has begun.</h2>
+                <p>We’ll review your inputs and contact you within 12 hours.</p>
+            </div>
+        </form>
+    </div>
+
+    <script src="intake-script.js"></script> <!-- Link to JS for multi-step logic -->
+</body>
+</html>

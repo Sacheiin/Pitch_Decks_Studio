@@ -1,0 +1,382 @@
+/* Base Styles */
+:root {
+    --navy: #0a2540;
+    --teal: #2EC4B6;
+    --light-gray: #f8f9fa;
+    --dark-gray: #333;
+    --white: #ffffff;
+    --shadow-color: rgba(10, 37, 64, 0.1);
+    --shadow-color-darker: rgba(10, 37, 64, 0.15);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--dark-gray);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--navy); /* Navy */
+    font-weight: 700;
+}
+
+a {
+    color: var(--teal); /* Teal Accent */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Header / Hero Section */
+#hero {
+    background-color: var(--light-gray);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+}
+
+#hero p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--teal); /* Teal Accent */
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #25a89a; /* Darker Teal */
+    box-shadow: 0 6px 15px var(--shadow-color-darker);
+    text-decoration: none;
+}
+
+.hero-mockup {
+    max-width: 80%; /* Adjust as needed, make it responsive */
+    height: auto;
+    display: block; /* Center it if needed */
+    margin: 40px auto 0; /* Add some top margin and center */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 5px 15px var(--shadow-color-darker); /* Subtle shadow */
+}
+
+.visual-placeholder {
+    margin-top: 40px;
+    padding: 50px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Who It's For Section */
+#who-its-for ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#who-its-for li {
+    background-color: var(--light-gray);
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+#who-its-for .icon {
+    font-size: 1.5em;
+}
+
+/* What You Get Section */
+.feature-item {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    text-align: center; /* Center text */
+}
+
+.feature-item h3 {
+    margin-bottom: 15px; /* Space between title and image */
+    font-size: 1.1em;
+}
+
+.feature-thumbnail {
+    max-width: 100%; /* Make responsive within grid item */
+    height: auto;
+    max-height: 120px; /* Optional: Limit height */
+    object-fit: contain; /* Ensure image fits well */
+    border-radius: 6px; /* Rounded corners */
+    box-shadow: 0 3px 8px var(--shadow-color); /* Soft drop shadow */
+    margin-top: auto; /* Push image to bottom if text varies */
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.features-grid div {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Pricing Section */
+#pricing {
+    background-color: var(--light-gray);
+}
+
+.pricing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    width: 280px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-color-darker);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--navy); /* Navy */
+}
+
+.card .price {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--navy); /* Navy */
+    margin: 15px 0;
+}
+
+.add-ons {
+    margin-top: 30px;
+}
+
+.add-ons ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Testimonials Section */
+.testimonial-placeholder {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-mockup {
+        max-width: 90%;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .testimonial {
+        flex-direction: column !important; /* Stack image and text on mobile */
+        text-align: center;
+    }
+
+    .testimonial blockquote {
+        margin-top: 20px;
+    }
+
+    .before-after-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .addon-mockup {
+        max-width: 90%;
+    }
+}
+
+/* How It Works Section */
+#how-it-works ol {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+#how-it-works li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+}
+
+#how-it-works .icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #2EC4B6; /* Teal Accent */
+}
+
+/* FAQ Section */
+#faq details {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 15px;
+    text-align: left;
+}
+
+#faq summary {
+    font-weight: bold;
+    cursor: pointer;
+    color: #0a2540; /* Navy */
+}
+
+#faq summary::marker {
+    color: #2EC4B6; /* Teal Accent */
+}
+
+/* Final CTA Section */
+#final-cta {
+    background-color: #0a2540; /* Navy */
+    color: #ffffff;
+}
+
+#final-cta h2 {
+    color: #ffffff;
+}
+
+#final-cta p {
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--navy); /* Navy */
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.2em;
+    }
+
+    #hero p {
+        font-size: 1em;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    #how-it-works ol {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 40px 15px;
+    }
+
+    #hero h1 {
+        font-size: 1.8em;
+    }
+
+    #hero p {
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}

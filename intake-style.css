@@ -1,0 +1,227 @@
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7f9; /* Light background */
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: #333;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    max-width: 700px;
+    width: 100%;
+}
+
+h2 {
+    color: #0a2540; /* Navy */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.progress-indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #e0e0e0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+.step.active {
+    background-color: #2EC4B6; /* Teal Accent */
+}
+
+/* Form Steps */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form Elements */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+input[type="file"] {
+    padding: 8px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button,
+.cta-button {
+    background-color: #2EC4B6; /* Teal Accent */
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+button:hover,
+.cta-button:hover {
+    background-color: #25a89a; /* Darker Teal */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.prev-btn {
+    background-color: #6c757d; /* Gray */
+    margin-right: 10px;
+}
+
+.prev-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Step 4: Package & Addons */
+.package-options label,
+.addon-options label {
+    display: block;
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.package-options label:hover,
+.addon-options label:hover {
+    border-color: #2EC4B6;
+}
+
+.package-options input[type="radio"],
+.addon-options input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Step 5: Summary & Payment */
+#summary {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+#summary p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+#summary span {
+    font-weight: bold;
+    color: #0a2540;
+}
+
+.payment-placeholder {
+    padding: 30px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    color: #6c757d;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Confirmation Message */
+#confirmation-message h2 {
+    color: #2EC4B6; /* Teal Accent */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .form-container {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .step {
+        width: 25px;
+        height: 25px;
+        font-size: 0.8em;
+    }
+
+    button,
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.8em;
+    }
+}
